@@ -16,7 +16,9 @@ import {
   Building2,
   Calendar,
   ChevronDown,
-  Plus
+  Plus,
+  Sun,
+  Wind
 } from 'lucide-react';
 import { motion } from 'motion/react';
 
@@ -51,13 +53,15 @@ function LeadForm() {
     nome: '',
     empresa: '',
     cidade: '',
-    foco: 'Venda',
-    equipe: '1-5'
+    foco: 'Imoveis',
+    equipe: '1',
+    investimento: 'R$ 1.000 - R$ 3.000',
+    experiencia: 'Nao'
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const message = `Olá! Gostaria de um diagnóstico gratuito.%0A%0A*Dados do Formulário:*%0A- *Nome:* ${formData.nome}%0A- *Empresa/Autônomo:* ${formData.empresa}%0A- *Cidade:* ${formData.cidade}%0A- *Foco:* ${formData.foco}%0A- *Equipe:* ${formData.equipe}`;
+    const message = `Olá! Gostaria de um diagnóstico gratuito.%0A%0A*Dados do Formulário:*%0A- *Nome:* ${formData.nome}%0A- *Empresa/Autônomo:* ${formData.empresa}%0A- *Cidade:* ${formData.cidade}%0A- *Foco:* ${formData.foco}%0A- *Equipe:* ${formData.equipe}%0A- *Investimento:* ${formData.investimento}%0A- *Já anuncia:* ${formData.experiencia}`;
     window.open(`https://wa.me/5544997068938?text=${message}`, '_blank');
   };
 
@@ -87,18 +91,18 @@ function LeadForm() {
           />
         </div>
       </div>
-      <div className="space-y-1">
-        <label className="text-xs font-bold uppercase tracking-wider text-indigo-200">Cidade e Estado</label>
-        <input 
-          required
-          type="text" 
-          placeholder="Onde você atua?"
-          className="w-full rounded-xl border-none bg-white/10 px-4 py-3 text-white placeholder:text-indigo-300/50 focus:ring-2 focus:ring-white/50"
-          value={formData.cidade}
-          onChange={(e) => setFormData({...formData, cidade: e.target.value})}
-        />
-      </div>
       <div className="grid gap-4 sm:grid-cols-2">
+        <div className="space-y-1">
+          <label className="text-xs font-bold uppercase tracking-wider text-indigo-200">Cidade e Estado</label>
+          <input 
+            required
+            type="text" 
+            placeholder="Onde você atua?"
+            className="w-full rounded-xl border-none bg-white/10 px-4 py-3 text-white placeholder:text-indigo-300/50 focus:ring-2 focus:ring-white/50"
+            value={formData.cidade}
+            onChange={(e) => setFormData({...formData, cidade: e.target.value})}
+          />
+        </div>
         <div className="space-y-1">
           <label className="text-xs font-bold uppercase tracking-wider text-indigo-200">Foco Principal</label>
           <select 
@@ -106,23 +110,37 @@ function LeadForm() {
             value={formData.foco}
             onChange={(e) => setFormData({...formData, foco: e.target.value})}
           >
-            <option value="Vendas">Vendas</option>
-            <option value="Servicos">Serviços</option>
-            <option value="Consultoria">Consultoria</option>
-            <option value="Outros">Outros</option>
+            <option value="Imoveis">Imóveis (Venda/Locação)</option>
+            <option value="EnergiaSolar">Energia Solar</option>
+            <option value="ArCondicionado">Ar Condicionado / HVAC</option>
+            <option value="Outros">Outros Serviços de Alto Valor</option>
+          </select>
+        </div>
+      </div>
+      <div className="grid gap-4 sm:grid-cols-2">
+        <div className="space-y-1">
+          <label className="text-xs font-bold uppercase tracking-wider text-indigo-200">Investimento Mensal Pretendido</label>
+          <select 
+            className="w-full rounded-xl border-none bg-white/10 px-4 py-3 text-white focus:ring-2 focus:ring-white/50 [&>option]:text-slate-900"
+            value={formData.investimento}
+            onChange={(e) => setFormData({...formData, investimento: e.target.value})}
+          >
+            <option value="R$ 1.000 - R$ 3.000">R$ 1.000 - R$ 3.000</option>
+            <option value="R$ 3.000 - R$ 7.000">R$ 3.000 - R$ 7.000</option>
+            <option value="R$ 7.000 - R$ 15.000">R$ 7.000 - R$ 15.000</option>
+            <option value="Acima de R$ 15.000">Acima de R$ 15.000</option>
           </select>
         </div>
         <div className="space-y-1">
-          <label className="text-xs font-bold uppercase tracking-wider text-indigo-200">Tamanho da Equipe</label>
+          <label className="text-xs font-bold uppercase tracking-wider text-indigo-200">Já investe em anúncios?</label>
           <select 
             className="w-full rounded-xl border-none bg-white/10 px-4 py-3 text-white focus:ring-2 focus:ring-white/50 [&>option]:text-slate-900"
-            value={formData.equipe}
-            onChange={(e) => setFormData({...formData, equipe: e.target.value})}
+            value={formData.experiencia}
+            onChange={(e) => setFormData({...formData, experiencia: e.target.value})}
           >
-            <option value="1">Apenas eu</option>
-            <option value="2-5">2 a 5 pessoas</option>
-            <option value="6-15">6 a 15 pessoas</option>
-            <option value="16+">Mais de 15 pessoas</option>
+            <option value="Nao">Ainda não</option>
+            <option value="Sim - Pouco">Sim, mas pouco resultado</option>
+            <option value="Sim - Escalar">Sim, quero escalar</option>
           </select>
         </div>
       </div>
@@ -155,7 +173,7 @@ export default function App() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-600 text-white shadow-lg shadow-indigo-200">
-              <Building2 size={24} />
+              <TrendingUp size={24} />
             </div>
             <span className="text-xl font-bold tracking-tight text-slate-900">D1 Digital</span>
           </div>
@@ -181,13 +199,13 @@ export default function App() {
               >
                 <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-1.5 text-sm font-medium text-indigo-700">
                   <TrendingUp size={16} />
-                  <span>Especialistas em Posicionamento e Geração de Leads</span>
+                  <span>Especialistas em Imóveis e Serviços de Alto Valor</span>
                 </div>
                 <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
-                  Crie um <span className="text-indigo-600">Fluxo Previsível</span> de Clientes Qualificados no seu WhatsApp.
+                  Crie um <span className="text-indigo-600">Fluxo Previsível</span> de Leads Qualificados para o seu Negócio.
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-slate-600">
-                  Pare de depender da sorte ou de indicações instáveis. Nossa metodologia de posicionamento digital e tráfego pago atrai potenciais clientes que estão buscando seus serviços <span className="font-bold text-slate-900">exatamente agora</span> e os entrega prontos para fechar negócio.
+                  Seja você uma imobiliária, corretor ou empresa de serviços como energia solar e climatização, nossa metodologia atrai potenciais clientes que estão buscando seus serviços <span className="font-bold text-slate-900">exatamente agora</span> e os entrega prontos para fechar negócio.
                 </p>
                 <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                   <button 
@@ -282,30 +300,32 @@ export default function App() {
           </div>
         </section>
 
-        {/* 3. Solution Section */}
+        {/* 3. Solution Section (Method) */}
         <section className="px-4 py-24 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="mb-16 text-center">
-              <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">O Método D1 Digital de Atração</h2>
-              <p className="mt-4 text-lg text-slate-600">Não fazemos apenas anúncios. Criamos um ecossistema de vendas para o seu negócio.</p>
+              <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Como funciona o Método D1 Digital</h2>
+              <p className="mt-4 text-lg text-slate-600">
+                Nosso objetivo é criar um fluxo constante de novos interessados no seu serviço ou imóveis através de 3 etapas simples:
+              </p>
             </div>
             <div className="grid gap-8 md:grid-cols-3">
               {[
                 {
-                  title: "Anúncios no Google",
-                  desc: "Aparecemos para quem está pesquisando ativamente pelos seus produtos ou serviços agora mesmo.",
-                  icon: <Search className="text-indigo-600" size={32} />,
+                  title: "Estrutura Digital",
+                  desc: "Organização da sua presença online e criação de páginas de captação otimizadas para converter visitantes em leads.",
+                  icon: <Building2 className="text-indigo-600" size={32} />,
                   step: "01"
                 },
                 {
-                  title: "Instagram e Facebook",
-                  desc: "Criamos desejo através de anúncios visuais impactantes que mostram o valor da sua marca para o público certo.",
-                  icon: <Instagram className="text-indigo-600" size={32} />,
+                  title: "Estratégia de Anúncios",
+                  desc: "Campanhas segmentadas no Google e redes sociais para alcançar as pessoas que já estão buscando pelo que você oferece na sua região.",
+                  icon: <TrendingUp className="text-indigo-600" size={32} />,
                   step: "02"
                 },
                 {
-                  title: "Leads no WhatsApp",
-                  desc: "O interessado clica e cai direto no seu WhatsApp. Sem formulários complexos, apenas conversas reais com quem quer comprar.",
+                  title: "Captação de Contatos",
+                  desc: "Pessoas realmente interessadas entram em contato direto pelo seu WhatsApp ou formulário, prontas para serem atendidas.",
                   icon: <MessageCircle className="text-indigo-600" size={32} />,
                   step: "03"
                 }
@@ -353,18 +373,18 @@ export default function App() {
                     <div className="mb-4 flex gap-1 text-amber-400">
                       {[1, 2, 3, 4, 5].map((s) => <span key={s}>★</span>)}
                     </div>
-                    <p className="italic text-indigo-50">"O volume de leads qualificados superou nossas expectativas. Batemos nossa meta de vendas logo no primeiro mês."</p>
+                    <p className="italic text-indigo-50">"Fechamos 3 vendas de imóveis de alto padrão no primeiro mês de campanha. O lead chega muito mais pronto para o fechamento."</p>
                     <div className="mt-6 flex items-center gap-3">
                       <img 
-                        src="https://picsum.photos/seed/ricardo/80/80" 
-                        alt="Ricardo" 
+                        src="https://picsum.photos/seed/corretor/80/80" 
+                        alt="Corretor" 
                         className="h-10 w-10 rounded-full border border-indigo-400" 
                         referrerPolicy="no-referrer" 
                         loading="lazy"
                       />
                       <div>
-                        <p className="text-sm font-bold">Ricardo Silva</p>
-                        <p className="text-xs text-indigo-300">CEO, Tech Solutions</p>
+                        <p className="text-sm font-bold">André Martins</p>
+                        <p className="text-xs text-indigo-300">Corretor de Imóveis Premium</p>
                       </div>
                     </div>
                   </div>
@@ -372,18 +392,18 @@ export default function App() {
                     <div className="mb-4 flex gap-1 text-amber-200">
                       {[1, 2, 3, 4, 5].map((s) => <span key={s}>★</span>)}
                     </div>
-                    <p className="italic text-white">"Finalmente um serviço que entende de geração de demanda. Leads reais no WhatsApp todo dia."</p>
+                    <p className="italic text-white">"Nossa agenda de orçamentos para energia solar lotou. Recebemos cerca de 5 a 8 leads qualificados todos os dias pelo WhatsApp."</p>
                     <div className="mt-6 flex items-center gap-3">
                       <img 
-                        src="https://picsum.photos/seed/ana/80/80" 
-                        alt="Ana" 
+                        src="https://picsum.photos/seed/solar/80/80" 
+                        alt="Solar" 
                         className="h-10 w-10 rounded-full border border-indigo-300" 
                         referrerPolicy="no-referrer" 
                         loading="lazy"
                       />
                       <div>
-                        <p className="text-sm font-bold">Ana Paula</p>
-                        <p className="text-xs text-indigo-100">Empreendedora</p>
+                        <p className="text-sm font-bold">Carla Fonseca</p>
+                        <p className="text-xs text-indigo-100">Diretora Comercial - EcoSolar</p>
                       </div>
                     </div>
                   </div>
@@ -393,18 +413,18 @@ export default function App() {
                     <div className="mb-4 flex gap-1 text-amber-400">
                       {[1, 2, 3, 4, 5].map((s) => <span key={s}>★</span>)}
                     </div>
-                    <p className="italic text-indigo-50">"Aumentamos nossas visitas em 40% logo na primeira semana. O suporte é excelente."</p>
+                    <p className="italic text-indigo-50">"Como técnico de ar condicionado, eu dependia de indicação. Hoje meu telefone não para de tocar com novos serviços na região."</p>
                     <div className="mt-6 flex items-center gap-3">
                       <img 
-                        src="https://picsum.photos/seed/marcos/80/80" 
-                        alt="Marcos" 
+                        src="https://picsum.photos/seed/tecnico/80/80" 
+                        alt="Tecnico" 
                         className="h-10 w-10 rounded-full border border-indigo-400" 
                         referrerPolicy="no-referrer" 
                         loading="lazy"
                       />
                       <div>
-                        <p className="text-sm font-bold">Marcos Oliveira</p>
-                        <p className="text-xs text-indigo-300">Gerente de Vendas</p>
+                        <p className="text-sm font-bold">João Pedro</p>
+                        <p className="text-xs text-indigo-300">JP Climatização</p>
                       </div>
                     </div>
                   </div>
@@ -412,12 +432,12 @@ export default function App() {
                     <div className="mb-4 flex gap-1 text-amber-300">
                       {[1, 2, 3, 4, 5].map((s) => <span key={s}>★</span>)}
                     </div>
-                    <p className="italic text-white">"O melhor investimento que fizemos este ano. O custo por lead é muito menor que nos portais tradicionais."</p>
+                    <p className="italic text-white">"O melhor ROI que já tivemos. O custo por lead qualificado é 60% menor do que pagávamos em portais imobiliários tradicionais."</p>
                     <div className="mt-6 flex items-center gap-3">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600 border border-indigo-400 font-bold text-xs">IC</div>
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600 border border-indigo-400 font-bold text-xs text-white">LV</div>
                       <div>
-                        <p className="text-sm font-bold">Imobiliária Central</p>
-                        <p className="text-xs text-indigo-200">Parceiro desde 2023</p>
+                        <p className="text-sm font-bold">Lopes Vendas</p>
+                        <p className="text-xs text-indigo-200">Imobiliária Parceira</p>
                       </div>
                     </div>
                   </div>
@@ -436,19 +456,19 @@ export default function App() {
             <div className="grid gap-8 sm:grid-cols-3">
               {[
                 {
-                  title: "Empresas Locais",
-                  desc: "Que desejam dominar a sua região e atrair clientes qualificados de forma constante.",
+                  title: "Imobiliárias & Corretores",
+                  desc: "Domine sua região com leads exclusivos de pessoas buscando comprar ou alugar imóveis agora.",
                   icon: <Building2 className="text-indigo-600" size={28} />
                 },
                 {
-                  title: "Profissionais Liberais",
-                  desc: "Que precisam de um fluxo constante de novos clientes para escalar seu faturamento.",
-                  icon: <Users className="text-indigo-600" size={28} />
+                  title: "Energia Solar",
+                  desc: "Atraia proprietários interessados em reduzir a conta de luz com projetos fotovoltaicos.",
+                  icon: <Sun className="text-indigo-600" size={28} />
                 },
                 {
-                  title: "Lançamentos e Projetos",
-                  desc: "Ideal para validar novos produtos ou serviços e escalar vendas rapidamente.",
-                  icon: <MapPin className="text-indigo-600" size={28} />
+                  title: "Serviços Técnicos (HVAC)",
+                  desc: "Fluxo constante para técnicos de ar condicionado e manutenção predial qualificada.",
+                  icon: <Wind className="text-indigo-600" size={28} />
                 }
               ].map((item, idx) => (
                 <div key={idx} className="rounded-3xl border border-slate-100 bg-slate-50 p-8 text-center">
@@ -551,7 +571,7 @@ export default function App() {
         <div className="mx-auto max-w-7xl text-center">
           <div className="flex items-center justify-center gap-2">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600 text-white">
-              <Building2 size={18} />
+              <TrendingUp size={18} />
             </div>
             <span className="text-lg font-bold tracking-tight text-slate-900">D1 Digital</span>
           </div>
