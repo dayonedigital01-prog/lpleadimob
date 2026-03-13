@@ -76,7 +76,7 @@ function LeadForm() {
           />
         </div>
         <div className="space-y-1">
-          <label className="text-xs font-bold uppercase tracking-wider text-indigo-200">Imobiliária / Autônomo</label>
+          <label className="text-xs font-bold uppercase tracking-wider text-indigo-200">Empresa / Profissional</label>
           <input 
             required
             type="text" 
@@ -106,10 +106,10 @@ function LeadForm() {
             value={formData.foco}
             onChange={(e) => setFormData({...formData, foco: e.target.value})}
           >
-            <option value="Venda">Venda (Prontos)</option>
-            <option value="Lancamentos">Lançamentos</option>
-            <option value="Locacao">Locação</option>
-            <option value="AltoPadrao">Alto Padrão</option>
+            <option value="Vendas">Vendas</option>
+            <option value="Servicos">Serviços</option>
+            <option value="Consultoria">Consultoria</option>
+            <option value="Outros">Outros</option>
           </select>
         </div>
         <div className="space-y-1">
@@ -157,7 +157,7 @@ export default function App() {
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-600 text-white shadow-lg shadow-indigo-200">
               <Building2 size={24} />
             </div>
-            <span className="text-xl font-bold tracking-tight text-slate-900">LeadImob</span>
+            <span className="text-xl font-bold tracking-tight text-slate-900">D1 Digital</span>
           </div>
           <button 
             onClick={scrollToContact}
@@ -181,13 +181,13 @@ export default function App() {
               >
                 <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-1.5 text-sm font-medium text-indigo-700">
                   <TrendingUp size={16} />
-                  <span>Especialistas em Tráfego Imobiliário</span>
+                  <span>Especialistas em Posicionamento e Geração de Leads</span>
                 </div>
                 <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
-                  Instale um <span className="text-indigo-600">Fluxo Previsível</span> de Compradores no seu WhatsApp.
+                  Crie um <span className="text-indigo-600">Fluxo Previsível</span> de Clientes Qualificados no seu WhatsApp.
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-slate-600">
-                  Pare de queimar dinheiro em portais saturados ou depender da sorte. Nossa metodologia de tráfego pago atrai pessoas que estão buscando imóveis <span className="font-bold text-slate-900">agora</span> e as entrega prontas para o seu corretor fechar negócio.
+                  Pare de depender da sorte ou de indicações instáveis. Nossa metodologia de posicionamento digital e tráfego pago atrai potenciais clientes que estão buscando seus serviços <span className="font-bold text-slate-900">exatamente agora</span> e os entrega prontos para fechar negócio.
                 </p>
                 <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                   <button 
@@ -217,7 +217,7 @@ export default function App() {
                       />
                     ))}
                   </div>
-                  <p>+150 imobiliárias já aceleraram suas vendas</p>
+                  <p>+150 empresas já aceleraram suas vendas</p>
                 </div>
               </motion.div>
               <motion.div 
@@ -229,7 +229,7 @@ export default function App() {
                 <div className="relative aspect-square overflow-hidden rounded-3xl bg-slate-100 shadow-2xl">
                   <img 
                     src="https://lh3.googleusercontent.com/d/18MKg3xri-DHobkBA0I87_yqbP5foOy0E=s1200" 
-                    alt="Especialista LeadImob" 
+                    alt="Especialista D1 Digital" 
                     className="h-full w-full object-cover"
                     referrerPolicy="no-referrer"
                     fetchPriority="high"
@@ -238,7 +238,7 @@ export default function App() {
                     <div className="flex items-center justify-between">
                       <div>
                         <p className="text-xs font-bold uppercase tracking-wider text-indigo-600">Novo Lead Recebido</p>
-                        <p className="text-sm font-semibold text-slate-900">Interesse: Apartamento 3 Quartos - Centro</p>
+                        <p className="text-sm font-semibold text-slate-900">Interesse: Consultoria Especializada</p>
                       </div>
                       <div className="rounded-full bg-green-500 p-2 text-white">
                         <MessageCircle size={20} />
@@ -261,7 +261,7 @@ export default function App() {
               Você está cansado de pagar caro por leads que não atendem o telefone?
             </h2>
             <p className="mt-6 text-lg text-slate-600">
-              A maioria das imobiliárias está presa na "Escravidão dos Portais", onde você paga caro para dividir o mesmo interessado com 10 concorrentes. O resultado? Leads frios, corretores desmotivados e vendas travadas.
+              A maioria das empresas está presa em métodos antigos ou dependendo de indicações que nunca chegam. O resultado? Faturamento estagnado, equipe desmotivada e crescimento travado.
             </p>
             <div className="mt-12 grid gap-6 sm:grid-cols-2">
               <div className="rounded-2xl bg-white p-6 shadow-sm border border-slate-100">
@@ -286,26 +286,26 @@ export default function App() {
         <section className="px-4 py-24 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="mb-16 text-center">
-              <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">O Método LeadImob de Atração</h2>
-              <p className="mt-4 text-lg text-slate-600">Não fazemos apenas anúncios. Criamos um ecossistema de vendas para sua imobiliária.</p>
+              <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">O Método D1 Digital de Atração</h2>
+              <p className="mt-4 text-lg text-slate-600">Não fazemos apenas anúncios. Criamos um ecossistema de vendas para o seu negócio.</p>
             </div>
             <div className="grid gap-8 md:grid-cols-3">
               {[
                 {
                   title: "Anúncios no Google",
-                  desc: "Aparecemos para quem está pesquisando ativamente por 'imóveis à venda' ou 'apartamento na região' agora mesmo.",
+                  desc: "Aparecemos para quem está pesquisando ativamente pelos seus produtos ou serviços agora mesmo.",
                   icon: <Search className="text-indigo-600" size={32} />,
                   step: "01"
                 },
                 {
                   title: "Instagram e Facebook",
-                  desc: "Criamos desejo através de anúncios visuais impactantes que mostram o melhor dos seus imóveis para o público certo.",
+                  desc: "Criamos desejo através de anúncios visuais impactantes que mostram o valor da sua marca para o público certo.",
                   icon: <Instagram className="text-indigo-600" size={32} />,
                   step: "02"
                 },
                 {
                   title: "Leads no WhatsApp",
-                  desc: "O interessado clica e cai direto no WhatsApp do seu corretor. Sem formulários complexos, apenas conversas reais.",
+                  desc: "O interessado clica e cai direto no seu WhatsApp. Sem formulários complexos, apenas conversas reais com quem quer comprar.",
                   icon: <MessageCircle className="text-indigo-600" size={32} />,
                   step: "03"
                 }
@@ -330,14 +330,14 @@ export default function App() {
               <div>
                 <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Por que escolher nossa geração de leads?</h2>
                 <p className="mt-6 text-lg text-indigo-100">
-                  Focamos no que realmente importa para o seu negócio: colocar o corretor frente a frente com o comprador.
+                  Focamos no que realmente importa para o seu negócio: colocar você frente a frente com o seu cliente ideal.
                 </p>
                 <ul className="mt-10 space-y-6">
                   {[
                     "Geração constante de interessados todos os dias",
-                    "Aumento imediato no número de visitas aos imóveis",
-                    "Mais oportunidades reais de fechamento de venda",
-                    "Campanhas focadas exclusivamente na sua região de atuação",
+                    "Aumento imediato no número de contatos qualificados",
+                    "Mais oportunidades reais de fechamento de contrato",
+                    "Campanhas focadas exclusivamente no seu público-alvo",
                     "Exclusividade: não trabalhamos com seus concorrentes diretos"
                   ].map((benefit, idx) => (
                     <li key={idx} className="flex items-start gap-3">
@@ -353,7 +353,7 @@ export default function App() {
                     <div className="mb-4 flex gap-1 text-amber-400">
                       {[1, 2, 3, 4, 5].map((s) => <span key={s}>★</span>)}
                     </div>
-                    <p className="italic text-indigo-50">"O volume de leads qualificados superou nossas expectativas. Vendemos 3 imóveis no primeiro mês de campanha."</p>
+                    <p className="italic text-indigo-50">"O volume de leads qualificados superou nossas expectativas. Batemos nossa meta de vendas logo no primeiro mês."</p>
                     <div className="mt-6 flex items-center gap-3">
                       <img 
                         src="https://picsum.photos/seed/ricardo/80/80" 
@@ -364,7 +364,7 @@ export default function App() {
                       />
                       <div>
                         <p className="text-sm font-bold">Ricardo Silva</p>
-                        <p className="text-xs text-indigo-300">Diretor, Silva Imóveis</p>
+                        <p className="text-xs text-indigo-300">CEO, Tech Solutions</p>
                       </div>
                     </div>
                   </div>
@@ -372,7 +372,7 @@ export default function App() {
                     <div className="mb-4 flex gap-1 text-amber-200">
                       {[1, 2, 3, 4, 5].map((s) => <span key={s}>★</span>)}
                     </div>
-                    <p className="italic text-white">"Finalmente um serviço que entende o mercado imobiliário. Leads reais no WhatsApp todo dia."</p>
+                    <p className="italic text-white">"Finalmente um serviço que entende de geração de demanda. Leads reais no WhatsApp todo dia."</p>
                     <div className="mt-6 flex items-center gap-3">
                       <img 
                         src="https://picsum.photos/seed/ana/80/80" 
@@ -383,7 +383,7 @@ export default function App() {
                       />
                       <div>
                         <p className="text-sm font-bold">Ana Paula</p>
-                        <p className="text-xs text-indigo-100">Corretora Autônoma</p>
+                        <p className="text-xs text-indigo-100">Empreendedora</p>
                       </div>
                     </div>
                   </div>
@@ -436,18 +436,18 @@ export default function App() {
             <div className="grid gap-8 sm:grid-cols-3">
               {[
                 {
-                  title: "Imobiliárias Locais",
-                  desc: "Que desejam dominar a sua região e não depender apenas de portais.",
+                  title: "Empresas Locais",
+                  desc: "Que desejam dominar a sua região e atrair clientes qualificados de forma constante.",
                   icon: <Building2 className="text-indigo-600" size={28} />
                 },
                 {
-                  title: "Corretores Autônomos",
-                  desc: "Que precisam de um fluxo constante de novos clientes para bater metas.",
+                  title: "Profissionais Liberais",
+                  desc: "Que precisam de um fluxo constante de novos clientes para escalar seu faturamento.",
                   icon: <Users className="text-indigo-600" size={28} />
                 },
                 {
-                  title: "Lançamentos",
-                  desc: "Ideal para esgotar unidades de novos empreendimentos rapidamente.",
+                  title: "Lançamentos e Projetos",
+                  desc: "Ideal para validar novos produtos ou serviços e escalar vendas rapidamente.",
                   icon: <MapPin className="text-indigo-600" size={28} />
                 }
               ].map((item, idx) => (
@@ -478,19 +478,19 @@ export default function App() {
                 },
                 {
                   q: "Preciso ter um site ou landing page?",
-                  a: "Não necessariamente. Nós podemos direcionar os leads diretamente para o seu WhatsApp ou criar uma landing page de alta conversão específica para seus imóveis."
+                  a: "Não necessariamente. Nós podemos direcionar os leads diretamente para o seu WhatsApp ou criar uma landing page de alta conversão específica para o seu negócio."
                 },
                 {
                   q: "Qual o investimento mínimo recomendado?",
                   a: "Recomendamos um investimento inicial a partir de R$ 1.000,00/mês em anúncios para garantir um volume saudável de leads qualificados."
                 },
                 {
-                  q: "Os leads são exclusivos da minha imobiliária?",
-                  a: "Sim! Diferente dos portais imobiliários, os leads gerados através das nossas campanhas são exclusivos seus e chegam diretamente no seu contato."
+                  q: "Os leads são exclusivos da minha empresa?",
+                  a: "Sim! Diferente de plataformas de anúncios genéricas, os leads gerados através das nossas campanhas são exclusivos seus e chegam diretamente no seu contato."
                 },
                 {
                   q: "Como vocês garantem a qualidade dos leads?",
-                  a: "Utilizamos filtros avançados de segmentação no Google e Instagram, focando em pessoas com comportamento de compra e interesse real em imóveis na sua região específica."
+                  a: "Utilizamos filtros avançados de segmentação no Google e Instagram, focando em pessoas com comportamento de compra e interesse real no seu serviço ou produto."
                 }
               ].map((faq, idx) => (
                 <FAQItem key={idx} question={faq.q} answer={faq.a} />
@@ -553,10 +553,10 @@ export default function App() {
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600 text-white">
               <Building2 size={18} />
             </div>
-            <span className="text-lg font-bold tracking-tight text-slate-900">LeadImob</span>
+            <span className="text-lg font-bold tracking-tight text-slate-900">D1 Digital</span>
           </div>
           <p className="mt-4 text-sm text-slate-500">
-            © {new Date().getFullYear()} LeadImob - Especialistas em Tráfego Pago para Imobiliárias.
+            © {new Date().getFullYear()} D1 Digital - Especialistas em Posicionamento e Geração de Leads.
           </p>
           <div className="mt-6 flex justify-center gap-6 text-slate-400">
             <a href="#" className="hover:text-indigo-600 transition-colors">Privacidade</a>
