@@ -111,9 +111,8 @@ function LeadForm() {
             onChange={(e) => setFormData({...formData, foco: e.target.value})}
           >
             <option value="Imoveis">Imóveis (Venda/Locação)</option>
-            <option value="EnergiaSolar">Energia Solar</option>
-            <option value="ArCondicionado">Ar Condicionado / HVAC</option>
-            <option value="Outros">Outros Serviços de Alto Valor</option>
+            <option value="Lancamentos">Lançamentos / Loteamentos</option>
+            <option value="Outros">Outros</option>
           </select>
         </div>
       </div>
@@ -198,28 +197,28 @@ export default function App() {
                 transition={{ duration: 0.6 }}
               >
                 <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-1.5 text-sm font-medium text-indigo-700">
-                  <TrendingUp size={16} />
-                  <span>Especialistas em Imóveis e Serviços de Alto Valor</span>
+                  <Building2 size={16} />
+                  <span>Especialista em Marketing Imobiliário</span>
                 </div>
                 <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
-                  Crie um <span className="text-indigo-600">Fluxo Previsível</span> de Leads Qualificados para o seu Negócio.
+                  Receba contatos de pessoas interessadas em <span className="text-indigo-600">comprar imóveis</span> na sua cidade.
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-slate-600">
-                  Seja você uma imobiliária, corretor ou empresa de serviços como energia solar e climatização, nossa metodologia atrai potenciais clientes que estão buscando seus serviços <span className="font-bold text-slate-900">exatamente agora</span> e os entrega prontos para fechar negócio.
+                  Utilizamos estratégias avançadas de tráfego pago para atrair compradores qualificados e gerar oportunidades reais de venda para sua imobiliária ou carreira como corretor.
                 </p>
                 <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                   <button 
                     onClick={scrollToContact}
                     className="flex items-center justify-center gap-2 rounded-full bg-indigo-600 px-8 py-4 text-lg font-bold text-white shadow-xl shadow-indigo-200 transition-all hover:bg-indigo-700 hover:shadow-indigo-300 active:scale-95"
                   >
-                    Quero gerar mais compradores
+                    Solicitar diagnóstico
                     <ArrowRight size={20} />
                   </button>
                   <button 
                     onClick={scrollToContact}
                     className="flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-8 py-4 text-lg font-semibold text-slate-700 transition-all hover:bg-slate-50 active:scale-95"
                   >
-                    Ver como funciona
+                    Falar no WhatsApp
                   </button>
                 </div>
                 <div className="mt-8 flex items-center gap-4 text-sm text-slate-500">
@@ -276,63 +275,59 @@ export default function App() {
         <section className="bg-slate-50 px-4 py-24 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-              Você está cansado de pagar caro por leads que não atendem o telefone?
+              Cansado de depender apenas de portais imobiliários e indicações?
             </h2>
             <p className="mt-6 text-lg text-slate-600">
-              A maioria das empresas está presa em métodos antigos ou dependendo de indicações que nunca chegam. O resultado? Faturamento estagnado, equipe desmotivada e crescimento travado.
+              Muitos corretores e imobiliárias enfrentam os mesmos desafios todos os dias: leads frios, falta de previsibilidade nas vendas e a dificuldade constante em encontrar compradores reais.
             </p>
             <div className="mt-12 grid gap-6 sm:grid-cols-2">
-              <div className="rounded-2xl bg-white p-6 shadow-sm border border-slate-100">
+              <div className="rounded-2xl bg-white p-6 shadow-sm border border-slate-100 text-left">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-red-600">
+                  <Building2 size={24} />
+                </div>
+                <h3 className="text-lg font-bold text-slate-900">Refém dos Portais</h3>
+                <p className="mt-2 text-sm text-slate-600">Você paga caro para competir com centenas de outros corretores pelo mesmo contato, muitas vezes desatualizado.</p>
+              </div>
+              <div className="rounded-2xl bg-white p-6 shadow-sm border border-slate-100 text-left">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-red-600">
                   <Users size={24} />
                 </div>
-                <h3 className="text-lg font-bold text-slate-900">Dependência de Portais</h3>
-                <p className="mt-2 text-sm text-slate-600">Pagando caro para competir com centenas de outros corretores no mesmo anúncio.</p>
-              </div>
-              <div className="rounded-2xl bg-white p-6 shadow-sm border border-slate-100">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-red-600">
-                  <TrendingUp size={24} className="rotate-180" />
-                </div>
-                <h3 className="text-lg font-bold text-slate-900">Vendas Inconstantes</h3>
-                <p className="mt-2 text-sm text-slate-600">Meses com muitas vendas e meses sem nenhum interessado batendo na porta.</p>
+                <h3 className="text-lg font-bold text-slate-900">Leads Desqualificados</h3>
+                <p className="mt-2 text-sm text-slate-600">Perda de tempo com pessoas que não têm perfil de compra ou que apenas "estão dando uma olhadinha".</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* 3. Solution Section (Method) */}
+        {/* 3. Solution Section */}
         <section className="px-4 py-24 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="mb-16 text-center">
-              <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Como funciona o Método D1 Digital</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">A Solução: Tráfego Pago Estratégico</h2>
               <p className="mt-4 text-lg text-slate-600">
-                Nosso objetivo é criar um fluxo constante de novos interessados no seu serviço ou imóveis através de 3 etapas simples:
+                Gere leads qualificados através de anúncios segmentados no Google e nas redes sociais, focando em quem realmente quer comprar.
               </p>
             </div>
             <div className="grid gap-8 md:grid-cols-3">
               {[
                 {
-                  title: "Estrutura Digital",
-                  desc: "Organização da sua presença online e criação de páginas de captação otimizadas para converter visitantes em leads.",
-                  icon: <Building2 className="text-indigo-600" size={32} />,
-                  step: "01"
+                  title: "Geração Constante",
+                  desc: "Um fluxo ininterrupto de novos contatos interessados em seus imóveis chegando todos os dias.",
+                  icon: <TrendingUp className="text-indigo-600" size={32} />
                 },
                 {
-                  title: "Estratégia de Anúncios",
-                  desc: "Campanhas segmentadas no Google e redes sociais para alcançar as pessoas que já estão buscando pelo que você oferece na sua região.",
-                  icon: <TrendingUp className="text-indigo-600" size={32} />,
-                  step: "02"
+                  title: "Segmentação Regional",
+                  desc: "Anúncios direcionados exatamente para os bairros e perfis de público que você deseja atingir.",
+                  icon: <MapPin className="text-indigo-600" size={32} />
                 },
                 {
-                  title: "Captação de Contatos",
-                  desc: "Pessoas realmente interessadas entram em contato direto pelo seu WhatsApp ou formulário, prontas para serem atendidas.",
-                  icon: <MessageCircle className="text-indigo-600" size={32} />,
-                  step: "03"
+                  title: "Foco em Compradores",
+                  desc: "Estratégias desenhadas para atrair pessoas com real intenção de compra, não apenas curiosos.",
+                  icon: <Users className="text-indigo-600" size={32} />
                 }
               ].map((item, idx) => (
-                <div key={idx} className="relative rounded-3xl border border-slate-100 bg-white p-8 shadow-xl shadow-slate-100/50 transition-all hover:-translate-y-1">
-                  <div className="absolute -top-4 right-8 text-6xl font-black text-slate-50">{item.step}</div>
-                  <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo-50">
+                <div key={idx} className="rounded-3xl border border-slate-100 bg-white p-8 shadow-xl shadow-slate-100/50 text-center">
+                  <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo-50">
                     {item.icon}
                   </div>
                   <h3 className="text-xl font-bold text-slate-900">{item.title}</h3>
@@ -343,106 +338,29 @@ export default function App() {
           </div>
         </section>
 
-        {/* 4. Benefits Section */}
-        <section className="bg-indigo-900 px-4 py-24 text-white sm:px-6 lg:px-8">
+        {/* 4. How it Works Section */}
+        <section className="bg-slate-50 px-4 py-24 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
-            <div className="grid gap-16 lg:grid-cols-2">
-              <div>
-                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Por que escolher nossa geração de leads?</h2>
-                <p className="mt-6 text-lg text-indigo-100">
-                  Focamos no que realmente importa para o seu negócio: colocar você frente a frente com o seu cliente ideal.
-                </p>
-                <ul className="mt-10 space-y-6">
-                  {[
-                    "Geração constante de interessados todos os dias",
-                    "Aumento imediato no número de contatos qualificados",
-                    "Mais oportunidades reais de fechamento de contrato",
-                    "Campanhas focadas exclusivamente no seu público-alvo",
-                    "Exclusividade: não trabalhamos com seus concorrentes diretos"
-                  ].map((benefit, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <CheckCircle2 className="mt-1 flex-shrink-0 text-emerald-400" size={20} />
-                      <span className="text-lg text-indigo-50">{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <div className="space-y-4">
-                  <div className="rounded-2xl bg-indigo-800/50 p-6 shadow-lg backdrop-blur-sm">
-                    <div className="mb-4 flex gap-1 text-amber-400">
-                      {[1, 2, 3, 4, 5].map((s) => <span key={s}>★</span>)}
-                    </div>
-                    <p className="italic text-indigo-50">"Fechamos 3 vendas de imóveis de alto padrão no primeiro mês de campanha. O lead chega muito mais pronto para o fechamento."</p>
-                    <div className="mt-6 flex items-center gap-3">
-                      <img 
-                        src="https://picsum.photos/seed/corretor/80/80" 
-                        alt="Corretor" 
-                        className="h-10 w-10 rounded-full border border-indigo-400" 
-                        referrerPolicy="no-referrer" 
-                        loading="lazy"
-                      />
-                      <div>
-                        <p className="text-sm font-bold">André Martins</p>
-                        <p className="text-xs text-indigo-300">Corretor de Imóveis Premium</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="rounded-2xl bg-indigo-500 p-6 shadow-lg">
-                    <div className="mb-4 flex gap-1 text-amber-200">
-                      {[1, 2, 3, 4, 5].map((s) => <span key={s}>★</span>)}
-                    </div>
-                    <p className="italic text-white">"Nossa agenda de orçamentos para energia solar lotou. Recebemos cerca de 5 a 8 leads qualificados todos os dias pelo WhatsApp."</p>
-                    <div className="mt-6 flex items-center gap-3">
-                      <img 
-                        src="https://picsum.photos/seed/solar/80/80" 
-                        alt="Solar" 
-                        className="h-10 w-10 rounded-full border border-indigo-300" 
-                        referrerPolicy="no-referrer" 
-                        loading="lazy"
-                      />
-                      <div>
-                        <p className="text-sm font-bold">Carla Fonseca</p>
-                        <p className="text-xs text-indigo-100">Diretora Comercial - EcoSolar</p>
-                      </div>
-                    </div>
+            <div className="mb-16 text-center">
+              <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Como funciona o serviço</h2>
+              <p className="mt-4 text-lg text-slate-600">Um processo claro e direto para acelerar seus resultados.</p>
+            </div>
+            <div className="space-y-8">
+              {[
+                { step: "Etapa 1", title: "Análise da estrutura atual", desc: "Avaliamos como você capta leads hoje e identificamos gargalos na sua presença digital." },
+                { step: "Etapa 2", title: "Planejamento estratégico", desc: "Desenhamos a estratégia de anúncios ideal para o tipo de imóvel que você vende." },
+                { step: "Etapa 3", title: "Criação das campanhas", desc: "Configuramos seus anúncios no Google Ads e Meta Ads com foco total em conversão." },
+                { step: "Etapa 4", title: "Geração de leads", desc: "Seus anúncios começam a rodar e atrair pessoas interessadas em imóveis na sua região." },
+                { step: "Etapa 5", title: "Entrega direta", desc: "Os contatos chegam em tempo real diretamente no seu WhatsApp ou CRM de vendas." }
+              ].map((item, idx) => (
+                <div key={idx} className="flex flex-col gap-4 rounded-2xl bg-white p-6 shadow-sm border border-slate-100 sm:flex-row sm:items-center">
+                  <div className="flex-shrink-0 text-sm font-bold uppercase tracking-widest text-indigo-600 sm:w-32">{item.step}</div>
+                  <div className="flex-grow">
+                    <h3 className="text-lg font-bold text-slate-900">{item.title}</h3>
+                    <p className="text-slate-600">{item.desc}</p>
                   </div>
                 </div>
-                <div className="space-y-4 pt-0 sm:pt-8">
-                  <div className="rounded-2xl bg-white/10 p-6 shadow-lg backdrop-blur-sm">
-                    <div className="mb-4 flex gap-1 text-amber-400">
-                      {[1, 2, 3, 4, 5].map((s) => <span key={s}>★</span>)}
-                    </div>
-                    <p className="italic text-indigo-50">"Como técnico de ar condicionado, eu dependia de indicação. Hoje meu telefone não para de tocar com novos serviços na região."</p>
-                    <div className="mt-6 flex items-center gap-3">
-                      <img 
-                        src="https://picsum.photos/seed/tecnico/80/80" 
-                        alt="Tecnico" 
-                        className="h-10 w-10 rounded-full border border-indigo-400" 
-                        referrerPolicy="no-referrer" 
-                        loading="lazy"
-                      />
-                      <div>
-                        <p className="text-sm font-bold">João Pedro</p>
-                        <p className="text-xs text-indigo-300">JP Climatização</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="rounded-2xl bg-indigo-700 p-6 shadow-lg">
-                    <div className="mb-4 flex gap-1 text-amber-300">
-                      {[1, 2, 3, 4, 5].map((s) => <span key={s}>★</span>)}
-                    </div>
-                    <p className="italic text-white">"O melhor ROI que já tivemos. O custo por lead qualificado é 60% menor do que pagávamos em portais imobiliários tradicionais."</p>
-                    <div className="mt-6 flex items-center gap-3">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600 border border-indigo-400 font-bold text-xs text-white">LV</div>
-                      <div>
-                        <p className="text-sm font-bold">Lopes Vendas</p>
-                        <p className="text-xs text-indigo-200">Imobiliária Parceira</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
@@ -452,31 +370,92 @@ export default function App() {
           <div className="mx-auto max-w-7xl">
             <div className="mb-16 text-center">
               <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Para quem é este serviço?</h2>
+              <p className="mt-4 text-lg text-slate-600">Soluções sob medida para diferentes players do mercado imobiliário.</p>
             </div>
-            <div className="grid gap-8 sm:grid-cols-3">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                "Corretores Autônomos",
+                "Imobiliárias Locais",
+                "Lançamentos Imobiliários",
+                "Loteamentos",
+                "Construtoras",
+                "Gestores de Expansão"
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-center gap-3 rounded-2xl border border-slate-100 bg-slate-50 p-6">
+                  <CheckCircle2 className="text-indigo-600" size={24} />
+                  <span className="font-semibold text-slate-900">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 6. Differentials Section */}
+        <section className="bg-indigo-900 px-4 py-24 text-white sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Por que nos escolher como seu parceiro estratégico?</h2>
+            <p className="mt-6 text-lg text-indigo-100">
+              Nosso foco é único: gerar leads qualificados que se transformam em escrituras assinadas.
+            </p>
+            <ul className="mt-10 grid gap-4 sm:grid-cols-2 text-left">
+              {[
+                "Foco total em geração de leads imobiliários",
+                "Campanhas ultra-segmentadas por região e perfil",
+                "Estratégia personalizada para o seu tipo de imóvel",
+                "Acompanhamento rigoroso de métricas e resultados",
+                "Exclusividade regional para parceiros selecionados",
+                "Suporte direto para otimização de conversão"
+              ].map((benefit, idx) => (
+                <li key={idx} className="flex items-start gap-3">
+                  <CheckCircle2 className="mt-1 flex-shrink-0 text-emerald-400" size={20} />
+                  <span className="text-lg text-indigo-50">{benefit}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* Cases de Sucesso Section */}
+        <section className="px-4 py-24 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="mb-16 text-center">
+              <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Cases de Sucesso</h2>
+              <p className="mt-4 text-lg text-slate-600">Resultados reais de quem confiou na nossa estratégia imobiliária.</p>
+            </div>
+            <div className="grid gap-8 md:grid-cols-3">
               {[
                 {
-                  title: "Imobiliárias & Corretores",
-                  desc: "Domine sua região com leads exclusivos de pessoas buscando comprar ou alugar imóveis agora.",
-                  icon: <Building2 className="text-indigo-600" size={28} />
+                  title: "Imobiliária em Curitiba",
+                  desc: "Campanha focada em sobrados de médio padrão em bairros específicos.",
+                  result: "42 leads qualificados em 15 dias",
+                  testimonial: "O melhor investimento que já fizemos. O custo por lead caiu drasticamente.",
+                  author: "Marcos S., Diretor Comercial"
                 },
                 {
-                  title: "Energia Solar",
-                  desc: "Atraia proprietários interessados em reduzir a conta de luz com projetos fotovoltaicos.",
-                  icon: <Sun className="text-indigo-600" size={28} />
+                  title: "Corretor de Alto Padrão",
+                  desc: "Estratégia exclusiva para cobertura de luxo com ticket acima de R$ 2M.",
+                  result: "Venda realizada em 22 dias de campanha",
+                  testimonial: "Leads realmente qualificados. O filtro que aplicamos nos anúncios funcionou perfeitamente.",
+                  author: "André M., Corretor Premium"
                 },
                 {
-                  title: "Serviços Técnicos (HVAC)",
-                  desc: "Fluxo constante para técnicos de ar condicionado e manutenção predial qualificada.",
-                  icon: <Wind className="text-indigo-600" size={28} />
+                  title: "Lançamento Residencial",
+                  desc: "Campanha de pré-lançamento para captação de interessados em loteamento.",
+                  result: "80% das unidades reservadas em 1 semana",
+                  testimonial: "Estratégia impecável. Superamos a meta de captação antes mesmo do evento de abertura.",
+                  author: "Carla F., Gestora de Lançamentos"
                 }
               ].map((item, idx) => (
-                <div key={idx} className="rounded-3xl border border-slate-100 bg-slate-50 p-8 text-center">
-                  <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-sm">
-                    {item.icon}
-                  </div>
+                <div key={idx} className="flex flex-col rounded-3xl border border-slate-100 bg-white p-8 shadow-lg shadow-slate-100/50">
                   <h3 className="text-xl font-bold text-slate-900">{item.title}</h3>
-                  <p className="mt-4 text-slate-600">{item.desc}</p>
+                  <p className="mt-2 text-sm text-slate-500">{item.desc}</p>
+                  <div className="my-6 rounded-2xl bg-indigo-50 p-4 text-center">
+                    <p className="text-lg font-black text-indigo-600">{item.result}</p>
+                  </div>
+                  <div className="mt-auto">
+                    <p className="italic text-slate-600">"{item.testimonial}"</p>
+                    <p className="mt-4 text-sm font-bold text-slate-900">— {item.author}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -519,23 +498,23 @@ export default function App() {
           </div>
         </section>
 
-        {/* 6. Final CTA Section */}
+        {/* 7 & 8. Offer & Final CTA Section */}
         <section id="contato" className="px-4 py-24 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-6xl overflow-hidden rounded-[2.5rem] bg-indigo-600 shadow-2xl shadow-indigo-200">
             <div className="grid items-center lg:grid-cols-2">
               <div className="p-8 sm:p-12 lg:p-16">
-                <h2 className="text-3xl font-bold text-white sm:text-4xl">Receba um Plano de Guerra para sua região</h2>
+                <h2 className="text-3xl font-bold text-white sm:text-4xl">Diagnóstico gratuito de marketing imobiliário</h2>
                 <p className="mt-6 text-lg text-indigo-100">
-                  Não é uma "reunião de vendas". É um diagnóstico técnico onde mostraremos exatamente onde estão os compradores da sua cidade e quanto custa atraí-los.
+                  Solicite uma análise gratuita da sua estratégia digital e descubra como gerar mais contatos interessados em imóveis na sua região.
                 </p>
                 <div className="mt-8 hidden lg:block">
                   <div className="flex items-center gap-4 text-indigo-200">
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10">
-                      <CheckCircle2 size={24} />
+                      <Search size={24} />
                     </div>
                     <div>
-                      <p className="font-bold text-white">Análise de Concorrência</p>
-                      <p className="text-sm">Veja quem já está anunciando na sua área.</p>
+                      <p className="font-bold text-white">Análise de Presença Digital</p>
+                      <p className="text-sm">Identificamos falhas na sua captação atual.</p>
                     </div>
                   </div>
                   <div className="mt-6 flex items-center gap-4 text-indigo-200">
@@ -543,8 +522,8 @@ export default function App() {
                       <TrendingUp size={24} />
                     </div>
                     <div>
-                      <p className="font-bold text-white">Estimativa de Leads</p>
-                      <p className="text-sm">Saiba quantos contatos você pode receber por mês.</p>
+                      <p className="font-bold text-white">Oportunidades de Leads</p>
+                      <p className="text-sm">Mapeamos o potencial de compradores na sua área.</p>
                     </div>
                   </div>
                 </div>
